@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 
 import PhotoAlbum, { Photo } from "react-photo-album";
@@ -16,23 +16,39 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Image from "next/image";
 import type { RenderPhotoProps } from "react-photo-album";
 
-export function Photos({photos}:{photos:(Photo & {
-    originalWidth:number;
-    originalHeight:number;
-})[]}) {
-    const [index, setIndex] = useState(-1);
+export function Photos({
+  photos,
+}: {
+  photos: (Photo & {
+    originalWidth: number;
+    originalHeight: number;
+  })[];
+}) {
+  const [index, setIndex] = useState(-1);
 
   return (
     <>
-        <div className="p-3 appear album">
-            <PhotoAlbum renderPhoto={NextJsImage} spacing={10} photos={photos as any} layout="columns" targetRowHeight={150} onClick={({ index }) => setIndex(index)} />
-        </div>
+      <div className="p-3 appear album">
+        <PhotoAlbum
+          renderPhoto={NextJsImage}
+          spacing={10}
+          photos={photos as any}
+          layout="columns"
+          columns={(containerWidth) => {
+            if (containerWidth < 400) return 2;
+            if (containerWidth < 800) return 3;
+            return 4;
+          }}
+          targetRowHeight={150}
+          onClick={({ index }) => setIndex(index)}
+        />
+      </div>
 
       <Lightbox
-        slides={photos.map((photo)=>{
-            photo.height = photo.originalHeight;
-            photo.width = photo.originalWidth;
-            return photo
+        slides={photos.map((photo) => {
+          photo.height = photo.originalHeight;
+          photo.width = photo.originalWidth;
+          return photo;
         })}
         open={index >= 0}
         index={index}
@@ -55,7 +71,7 @@ export default function NextJsImage({
         fill
         src={photo}
         placeholder={"blurDataURL" in photo ? "blur" : undefined}
-        {...{ alt, title, className, onClick }} 
+        {...{ alt, title, className, onClick }}
         sizes={sizes}
       />
     </div>
