@@ -35,8 +35,8 @@ export function Photos({
           photos={photos as any}
           layout="columns"
           columns={(containerWidth) => {
-            if (containerWidth < 400) return 2;
-            if (containerWidth < 800) return 3;
+            if (containerWidth < 800) return 2;
+            if (containerWidth < 1400) return 3;
             return 4;
           }}
           targetRowHeight={150}
