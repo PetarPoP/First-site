@@ -56,7 +56,7 @@ const fetchPhotos = (folder = "") => {
 };
 
 export default function Home() {
-  const photos = fetchPhotos("Zdravkec&Bubi");
+  const photos = fetchPhotos("Slike");
   console.log(photos);
   return <Photos photos={photos} />;
 }
