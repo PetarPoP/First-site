@@ -28,8 +28,8 @@ export function Photos({ photos }: { photos: Photo[] }) {
           photos={photos.map((p) => {
             return {
               ...p,
-              height: p.height / 6,
-              width: p.width / 6,
+              height: p.height / 8,
+              width: p.width / 8,
             };
           })}
           layout="masonry"
