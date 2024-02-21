@@ -16,14 +16,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Image from "next/image";
 import type { RenderPhotoProps } from "react-photo-album";
 
-export function Photos({
-  photos,
-}: {
-  photos: (Photo & {
-    originalWidth: number;
-    originalHeight: number;
-  })[];
-}) {
+export function Photos({ photos }: { photos: Photo[] }) {
   const [index, setIndex] = useState(-1);
 
   return (
@@ -32,8 +25,14 @@ export function Photos({
         <PhotoAlbum
           renderPhoto={NextJsImage}
           spacing={10}
-          photos={photos as any}
-          layout="columns"
+          photos={photos.map((p) => {
+            return {
+              ...p,
+              height: p.height / 4,
+              width: p.width / 4,
+            };
+          })}
+          layout="masonry"
           columns={(containerWidth) => {
             if (containerWidth < 1400) return 2;
             return 4;
@@ -44,11 +43,7 @@ export function Photos({
       </div>
 
       <Lightbox
-        slides={photos.map((photo) => {
-          photo.height = photo.originalHeight;
-          photo.width = photo.originalWidth;
-          return photo;
-        })}
+        slides={photos}
         open={index >= 0}
         index={index}
         close={() => setIndex(-1)}
@@ -65,13 +60,19 @@ export default function NextJsImage({
   wrapperStyle,
 }: RenderPhotoProps) {
   return (
-    <div style={{ ...wrapperStyle, position: "relative" }}>
+    <div
+      style={{
+        ...wrapperStyle,
+        position: "relative",
+      }}
+    >
       <Image
         fill
         src={photo}
         placeholder={"blurDataURL" in photo ? "blur" : undefined}
         {...{ alt, title, className, onClick }}
         sizes={sizes}
+        className={`${className} object-cover`}
       />
     </div>
   );
