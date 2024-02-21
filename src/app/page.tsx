@@ -14,8 +14,8 @@ export default function Page() {
       <p className="text-center p-4 text-pretty md:max-w-[500px]">
         Student sam računarstva u Splitu. U svoje slobodno vrijeme volim
         programirati i fotografirati te neke od mojih projekata i fotografija
-        možete pronaći na ovoj stranici. Za više informacija sam na
-        raspolaganju.
+        možete pronaći na ovoj stranici. Na raspolaganju sam za više
+        informacija.
       </p>
       <h2 className="text-2xl font-bold mt-4">Lokacija</h2>
       <div className="flex flex-col items-center gap-2 md:flex-row">
