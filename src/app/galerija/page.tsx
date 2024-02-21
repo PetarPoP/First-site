@@ -11,7 +11,7 @@ const fetchPhotos = async () => {
         Authorization: `Client-ID ${client_id}`,
       },
       next: {
-        revalidate: 3600,
+        revalidate: 1,
       },
     }
   );
@@ -20,6 +20,7 @@ const fetchPhotos = async () => {
     width: image.width,
     height: image.height,
     src: image.link,
+    description: image.description,
   }));
 };
 

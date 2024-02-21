@@ -16,20 +16,27 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Image from "next/image";
 import type { RenderPhotoProps } from "react-photo-album";
 
-export function Photos({ photos }: { photos: Photo[] }) {
+export function Photos({
+  photos,
+}: {
+  photos: (Photo & {
+    description: string;
+  })[];
+}) {
   const [index, setIndex] = useState(-1);
 
   return (
     <>
       <div className="p-3 appear album">
         <PhotoAlbum
+          // @ts-ignore
           renderPhoto={NextJsImage}
           spacing={10}
           photos={photos.map((p) => {
             return {
               ...p,
-              height: p.height / 8,
-              width: p.width / 8,
+              height: p.height / 10,
+              width: p.width / 10,
             };
           })}
           layout="masonry"
@@ -54,13 +61,20 @@ export function Photos({ photos }: { photos: Photo[] }) {
   );
 }
 
+interface NextJsImageProps extends RenderPhotoProps {
+  photo: Photo & {
+    description: string;
+  };
+}
+
 export default function NextJsImage({
   photo,
   imageProps: { alt, title, sizes, className, onClick },
   wrapperStyle,
-}: RenderPhotoProps) {
+}: NextJsImageProps) {
   return (
     <div
+      className="wrapper group"
       style={{
         ...wrapperStyle,
         position: "relative",
@@ -74,6 +88,14 @@ export default function NextJsImage({
         sizes={sizes}
         className={`${className} object-cover`}
       />
+      {photo.description && (
+        <div
+          className="w-full group-hover:h-16 h-6 transition-all bg-gradient-to-t 
+      from-black to-transparent absolute bottom-0 flex items-end justify-center opacity-0 group-hover:opacity-100"
+        >
+          {photo.description}
+        </div>
+      )}
     </div>
   );
 }

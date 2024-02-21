@@ -19,16 +19,16 @@ body {
   animation: appear 0.2s ease-out forwards;
 }
 
-.album img {
+.album .wrapper {
   @apply rounded-sm border-black transition-all;
   animation: appear 0.2s ease-out forwards;
 }
 
-.album img:hover {
+.album .wrapper:hover {
   @apply scale-[101%];
 }
 
-.album:hover img:not(:hover) {
+.album:hover .wrapper:not(:hover) {
   @apply scale-[97%] opacity-80 brightness-90;
 }
 
