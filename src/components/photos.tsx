@@ -35,8 +35,8 @@ export function Photos({
           photos={photos.map((p) => {
             return {
               ...p,
-              height: p.height / 10,
-              width: p.width / 10,
+              height: p.height / 12,
+              width: p.width / 12,
             };
           })}
           layout="masonry"
