@@ -25,8 +25,19 @@ export function Photos({photos}:{photos:(Photo & {
   return (
     <>
         <div className="p-3 appear album">
-            <PhotoAlbum renderPhoto={NextJsImage} spacing={10} photos={photos as any} layout="columns" targetRowHeight={150} onClick={({ index }) => setIndex(index)} />
-        </div>
+        <PhotoAlbum
+          renderPhoto={NextJsImage}
+          spacing={10}
+          photos={photos as any}
+          layout="columns"
+          columns={(containerWidth) => {
+            if (containerWidth < 1400) return 2;
+            return 4;
+          }}
+          targetRowHeight={150}
+          onClick={({ index }) => setIndex(index)}
+        />
+      </div>
 
       <Lightbox
         slides={photos.map((photo)=>{
