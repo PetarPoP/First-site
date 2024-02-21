@@ -28,11 +28,7 @@ export function Photos({
 
   return (
     <>
-<<<<<<< HEAD
       <div className="p-3 appear album">
-=======
-        <div className="p-3 appear album">
->>>>>>> afa01ed0a2fd0f727f9c6bf581f0d75f9fbd84de
         <PhotoAlbum
           renderPhoto={NextJsImage}
           spacing={10}
