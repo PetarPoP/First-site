@@ -18,7 +18,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navigation/>
+        <div
+          className="fixed top-0 left-0 w-full h-full 
+        bg-gradient-to-r from-transparent via-black via-45% to-transparent to-99%
+        -z-10"
+        ></div>
+        <div
+          className="fixed top-0 left-0 w-full h-full 
+        bg-gradient-to-l from-transparent via-black via-45% to-transparent to-99%
+        -z-10"
+        ></div>
+        <div className="fixed left-0 top-0 h-full w-1/2 heropattern-circuitboard-gray-500 -z-20 opacity-25"></div>
+        <div className="fixed right-0 top-0 h-full w-1/2 heropattern-fallingtriangles-gray-500 -z-20 opacity-25"></div>
+        <Navigation />
         {children}
       </body>
     </html>

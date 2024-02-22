@@ -11,6 +11,21 @@
   }
 }
 
+@keyframes draw {
+  from {
+    stroke-dashoffset: 100%;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+svg {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  animation: draw 3s ease-in-out infinite;
+}
+
 body {
   @apply bg-black text-white;
 }

@@ -42,7 +42,7 @@ export function Photos({
           layout="masonry"
           columns={(containerWidth) => {
             if (containerWidth < 1400) return 2;
-            return 4;
+            return (containerWidth - 1400) / 300 + 2;
           }}
           targetRowHeight={150}
           onClick={({ index }) => setIndex(index)}
