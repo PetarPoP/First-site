@@ -24,7 +24,6 @@ export function Photos({
   })[];
 }) {
   const [index, setIndex] = useState(-1);
-
   return (
     <>
       <div className="p-3 appear album">
