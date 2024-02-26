@@ -32,7 +32,7 @@ export function Navigation() {
           >
             <Link
                 className={`transition-all duration-100 ease-in-out transform hover:-translate-y-2 ${
-                    path === item.href ? "font-semibold underline text-lg" : ""
+                    path === item.href ? "font-semibold border-b-2 rounded text-lg" : ""
                 }`}
               href={item.href}
             >
