@@ -34,8 +34,12 @@ export default function Page() {
           <RiPhoneLine className="text-lg mr-1" />
           <h3>
             HR:
-            <Link href="tel:+385993732936" className="text-sm underline ml-1">
-              +385 99 373 2936
+            <Link href="tel:+385993732936" className="text-sm ml-1">
+                <button className="p-1 transition-all duration-100 ease-in-out rounded border-b-2
+                  hover:bg-zinc-700 hover:border-b-4 hover:border-t-2 hover:border-white hover:border-l-2 hover:border-r-2
+                  active:transform active:border-b-0 active:translate-y-0">
+                    +385 99 373 2936
+                </button>
             </Link>
           </h3>
         </Copy>
@@ -43,27 +47,37 @@ export default function Page() {
           <RiPhoneLine className="text-lg mr-1" />
           <h3>
             BiH:
-            <Link href="tel:+38763632005" className="text-sm underline ml-1">
-              +387 63 632 005
-            </Link>
+              <Link href="tel:+38763632005" className="text-sm ml-1 ">
+                  <button className="p-1 transition-all duration-100 ease-in-out rounded border-b-2
+                  hover:bg-zinc-700 hover:border-b-4 hover:border-t-2 hover:border-white hover:border-l-2 hover:border-r-2
+                  active:transform active:border-b-0 active:translate-y-0">
+                      +387 63 632 005
+                  </button>
+              </Link>
           </h3>
         </Copy>
       </div>
-      <Copy value="petarpopovic719@gmail.com">
-        <RiMailLine className="text-lg mr-1" />
-        <h3>
-          Email:
-          <Link
-            href="mailto:petarpopovic719@gmail.com"
-            className="text-sm underline ml-1"
-          >
-            petarpopovic719@gmail.com
-          </Link>
-        </h3>
-      </Copy>
-      <Link href="https://www.instagram.com/pop_2110/">
-        <RiInstagramLine className="size-8 mt-10" />
-      </Link>
+        <Copy value="petarpopovic719@gmail.com">
+            <RiMailLine className="text-lg mr-1"/>
+            <h3>
+                Email:
+                <Link
+                    href="mailto:petarpopovic719@gmail.com"
+                    className="text-sm ml-1"
+                >
+                    <button className="p-1 transition-all duration-100 ease-in-out rounded border-b-2
+                  hover:bg-zinc-700 hover:border-b-4 hover:border-t-2 hover:border-white hover:border-l-2 hover:border-r-2
+                  active:transform active:border-b-0 active:translate-y-0">
+                        petarpopovic719@gmail.com
+                    </button>
+                </Link>
+            </h3>
+        </Copy>
+        <Link href="https://www.instagram.com/pop_2110/">
+            <RiInstagramLine className="size-10 mt-10 p-1 transition-all duration-100 ease-in-out rounded
+                  hover:bg-zinc-700 hover:border-b-4 hover:border-t-2 hover:border-white hover:border-l-2 hover:border-r-2
+                  active:transform active:border-b-0 active:translate-y-0"/>
+        </Link>
     </div>
-  );
+);
 }

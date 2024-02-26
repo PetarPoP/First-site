@@ -24,22 +24,23 @@ export function Navigation() {
     <div className="w-full h-16 flex justify-center items-center gap-4">
       {items.map((item) => {
         return (
-          <button
-            className="p-1 transition-all duration-100 ease-in-out rounded
-            hover:bg-zinc-700 hover:border-b-4 hover:border-t-2 hover:border-white hover:border-l-2 hover:border-r-2
-            active:transform active:border-b-0 active:translate-y-0"
-            key={item.href}
-          >
             <Link
-                className={`transition-all duration-100 ease-in-out transform hover:-translate-y-2 ${
-                    path === item.href ? "font-semibold border-b-2 rounded text-lg" : ""
+                key={item.href}
+                className={`transition-all duration-100 ease-in-out transform ${
+                    path === item.href ? "font-semibold border-b-2 rounded hover:border-b-0" : ""
                 }`}
-              href={item.href}
+                href={item.href}
             >
-              {item.title}
+              <button
+                  className="p-1 transition-all duration-100 ease-in-out rounded
+                  hover:bg-zinc-700 hover:border-b-4 hover:border-t-2 hover:border-white hover:border-l-2 hover:border-r-2
+                  active:transform active:border-b-0 active:translate-y-0"
+              >
+                {item.title}
+              </button>
             </Link>
-          </button>
-        );
+      )
+        ;
       })}
     </div>
   );
