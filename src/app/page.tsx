@@ -11,7 +11,7 @@ export default function Page() {
   return (
       <div className="w-full h-full gap-2 flex flex-col justify-center items-center appear">
           <div className="name min-w-[350px]">
-              {'Petar Popovic'.split('').map((letter, index) => {
+              {'Petar Popović'.split('').map((letter, index) => {
                   return (
                       <span
                           key={index}
