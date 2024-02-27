@@ -10,7 +10,7 @@ import {
 export default function Page() {
   return (
       <div className="w-full h-full gap-2 flex flex-col justify-center items-center appear">
-          <div className="name min-w-[350px]">
+          <div className="name min-w-[350px] mt-5">
               {'Petar Popović'.split('').map((letter, index) => {
                   return (
                       <span
@@ -23,7 +23,7 @@ export default function Page() {
               })}
           </div>
 
-          <p className="text-center p-4 text-pretty md:max-w-[500px] mt-7">
+          <p className="text-center p-4 text-pretty md:max-w-[500px] mt-5">
               Student sam računarstva u Splitu. U svoje slobodno vrijeme volim
               programirati i fotografirati te neke od mojih projekata i fotografija
               možete pronaći na ovoj stranici. Na raspolaganju sam za više
@@ -86,7 +86,7 @@ export default function Page() {
             </h3>
         </Copy>
         <Link href="https://www.instagram.com/pop_2110/">
-            <RiInstagramLine className="size-10 mt-10 p-1 transition-all duration-100 ease-in-out rounded
+            <RiInstagramLine className="size-10 mt-7 p-1 transition-all duration-100 ease-in-out rounded
                   hover:bg-zinc-700 hover:border-b-4 hover:border-t-2 hover:border-white hover:border-l-2 hover:border-r-2
                   active:transform active:border-b-0 active:translate-y-0"/>
         </Link>

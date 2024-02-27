@@ -22,6 +22,7 @@
 .name span:nth-child(12),
 .name span:nth-child(13){
   animation: down-in 0.5s forwards;
+  pointer-events: none;
 }
 
 .name:hover span:nth-child(1),
@@ -35,6 +36,7 @@
 .name:hover span:nth-child(12),
 .name:hover span:nth-child(13){
   animation: out-up 0.5s forwards;
+  pointer-events: none;
 }
 
 @keyframes out-up {
