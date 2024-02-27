@@ -11,45 +11,52 @@
   }
 }
 
-@keyframes draw {
+.name span:nth-child(1),
+.name span:nth-child(2),
+.name span:nth-child(3),
+.name span:nth-child(4),
+.name span:nth-child(5),
+.name span:nth-child(6),
+.name span:nth-child(10),
+.name span:nth-child(11),
+.name span:nth-child(12),
+.name span:nth-child(13){
+  animation: down-in 0.5s forwards;
+}
+
+.name:hover span:nth-child(1),
+.name:hover span:nth-child(2),
+.name:hover span:nth-child(3),
+.name:hover span:nth-child(4),
+.name:hover span:nth-child(5),
+.name:hover span:nth-child(6),
+.name:hover span:nth-child(10),
+.name:hover span:nth-child(11),
+.name:hover span:nth-child(12),
+.name:hover span:nth-child(13){
+  animation: out-up 0.5s forwards;
+}
+
+@keyframes out-up {
   from {
-    stroke-dashoffset: 100%;
+    transform: translateY(0);
+    opacity: 1;
   }
   to {
-    stroke-dashoffset: 0;
+    transform: translateY(-100%);
+    opacity: 0;
   }
 }
 
-.hover-text {
-  position: static;
-  transition: transform 0.3s ease-in-out;
-}
-
-.hover-text:hover {
-  transform: translateY(-20px);
-}
-
-.hover-text-in {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hover-text:hover .hover-text-in {
-  opacity: 1;
-}
-
-svg {
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 100%;
-  animation: draw 3s ease-in-out infinite;
+@keyframes down-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 body {

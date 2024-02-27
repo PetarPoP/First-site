@@ -9,23 +9,29 @@ import {
 
 export default function Page() {
   return (
-    <div className="w-full h-full gap-2 flex flex-col justify-center items-center appear">
-        <h1 className="text-5xl mt-7 font-bold">
-            <div className="hover-text">
-                Petar Popović
-                <br/>
-                <span className="hover-text-in">Pop</span>
-            </div>
-        </h1>
-        <p className="text-center p-4 text-pretty md:max-w-[500px] mt-1">
-            Student sam računarstva u Splitu. U svoje slobodno vrijeme volim
-            programirati i fotografirati te neke od mojih projekata i fotografija
-        možete pronaći na ovoj stranici. Na raspolaganju sam za više
-        informacija.
-      </p>
-      <h2 className="text-2xl font-bold mt-4">Lokacija</h2>
-      <div className="flex flex-col items-center gap-2 md:flex-row">
-        <div className="flex gap-1">
+      <div className="w-full h-full gap-2 flex flex-col justify-center items-center appear">
+          <div className="name min-w-[350px]">
+              {'Petar Popovic'.split('').map((letter, index) => {
+                  return (
+                      <span
+                          key={index}
+                          className="inline-block cursor-pointer text-5xl font-bold"
+                      >
+                            {letter === ' ' ? '\u00A0' : letter}
+                        </span>
+                  )
+              })}
+          </div>
+
+          <p className="text-center p-4 text-pretty md:max-w-[500px] mt-7">
+              Student sam računarstva u Splitu. U svoje slobodno vrijeme volim
+              programirati i fotografirati te neke od mojih projekata i fotografija
+              možete pronaći na ovoj stranici. Na raspolaganju sam za više
+              informacija.
+          </p>
+          <h2 className="text-2xl font-bold mt-4">Lokacija</h2>
+          <div className="flex flex-col items-center gap-2 md:flex-row">
+          <div className="flex gap-1">
           <RiMapPin2Line className="text-lg" />
           <h3 className="text-sm underline">Split</h3>
         </div>
@@ -85,5 +91,5 @@ export default function Page() {
                   active:transform active:border-b-0 active:translate-y-0"/>
         </Link>
     </div>
-);
+  );
 }
