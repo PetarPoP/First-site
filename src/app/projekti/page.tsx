@@ -15,7 +15,15 @@ export default async function Page() {
 function Projekt({ projekat }: { projekat: Repository }) {
   return (
     <div className="flex-col flex gap-2 p-2 rounded-md border">
-      {projekat.full_name}
+      <a href={projekat.html_url} target="_blank" rel="noopener noreferrer">
+        {projekat.full_name}
+      </a>
+      <p>{projekat.description}</p>
+      <p>Language: {projekat.language}</p>
+      <p>Stars: {projekat.stargazers_count}</p>
+      <p>Forks: {projekat.forks_count}</p>
+      <p>Open Issues: {projekat.open_issues_count}</p>
+      <p>Last Updated: {new Date(projekat.updated_at).toLocaleDateString()}</p>
     </div>
   );
 }
