@@ -61,12 +61,16 @@
   }
 }
 
+.black-font {
+  color: black;
+}
+
 body {
   @apply bg-black text-white;
 }
 
 .appear {
-  animation: appear 0.2s ease-out forwards;
+  animation: appear 0.3s ease-out forwards;
 }
 
 .album .wrapper {
