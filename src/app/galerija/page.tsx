@@ -1,8 +1,8 @@
 import { Photos } from "@/components/photos";
 
 const fetchPhotos = async () => {
-  const client_id = "4c539b18186ad71";
-  const album_id = "T6MeajI";
+  const client_id = "";
+  const album_id = "";
 
   const resp = await fetch(
     `https://api.imgur.com/3/album/${album_id}?with_images=true`,
